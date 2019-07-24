@@ -1,13 +1,12 @@
 import requests
-from decouple import config
 import datetime
-from datetime import timedelta, datetime
 import csv
+from decouple import config
+from datetime import timedelta, datetime
+
 
 key = config('API_KEY')
-# movieCd  movieNm  audiCnt
 URL = f'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key={key}&weekGb=0&targetDt='
-# mov_list = []
 mov_list = []
 
 with open('boxoffice.csv', 'w', encoding='utf-8', newline='') as f:
@@ -19,7 +18,6 @@ with open('boxoffice.csv', 'w', encoding='utf-8', newline='') as f:
         date2 = date1.strftime("%Y%m%d")
         data = requests.get(URL+f'{date2}').json()
         result = {}
-
         for movie in data['boxOfficeResult']['weeklyBoxOfficeList']:
             result = movie.get('movieCd')
             result2 = movie.get('directors')
