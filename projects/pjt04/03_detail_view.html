@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="01_layout.css">
+    <title>영화추천사이트</title>
+    <style>
+        .h33 {
+            text-align: center;
+            color: blueviolet;
+            text-decoration: underline;
+        }
+
+        .over9 {
+            background-color: aqua;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .under9 {
+            background-color: darkgray;
+            border-radius: 20px 20px 20px 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">영화추천사이트</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-disabled="true">친구평점보러가기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" aria-disabled="true">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <h2>당신에게 영화를 추천해드립니다.</h2>
+    </header>
+
+    <div class="container mt-3">
+        <h3 class="h33">영화목록</h3>
+        <div class="row">
+
+            <div class="card col-12 col-sm-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="images/20184621.jpg" id="modal_open" class="card-img-top" alt="엑시트" data-toggle="modal"
+                    data-target="#엑시트">
+
+                <div class="card-body">
+                    <h4 class="card-title">엑시트</h4>
+                    <p class> <span class="under9"> 8.57</span></p>
+                    <p class="card-text">코미디</p>
+                    <p class="card-text">개봉일 : 2019.07.31</p>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=174903" class="btn btn-primary">영화정보</a>
+                </div>
+            </div>
+
+            <div class="card col-12 col-sm-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="images/20180442.jpg" class="card-img-top" alt="사자" data-toggle="modal" data-target="#사자">
+                <div class="card-body">
+                    <h4 class="card-title">사자</h4>
+                    <p class> <span class="under9">7.32</span></p>
+                    <p class="card-text">미스터리</p>
+                    <p class="card-text">개봉일 : 2019.07.31</p>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=178544" class="btn btn-primary">영화정보</a>
+                </div>
+            </div>
+
+            <div class="card col-12 col-sm-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="images/20183844.jpg" class="card-img-top" alt="마이펫의 이중생활2" data-toggle="modal"
+                    data-target="#마이펫2">
+                <div class="card-body">
+                    <h4 class="card-title">마이펫의 이중생활2</h4>
+                    <p class> <span class="over9"> 9.13</span></p>
+                    <p class="card-text">애니메이션</p>
+                    <p class="card-text">개봉일 : 2019.07.31</p>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=180374" class="btn btn-primary">영화정보</a>
+                </div>
+            </div>
+
+            <div class="card col-12 col-sm-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="images/20175771.jpg" class="card-img-top" alt="라이온킹" data-toggle="modal" data-target="#라이온킹">
+                <div class="card-body">
+                    <h4 class="card-title">라이온킹</h4>
+                    <p class> <span class="under9"> 8.29</span></p>
+                    <p class="card-text">애니메이션</p>
+                    <p class="card-text">개봉일 : 2019.07.17</p>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=169637" class="btn btn-primary">영화정보</a>
+                </div>
+            </div>
+
+            <div class="card col-12 col-sm-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="images/20183867.jpg" class="card-img-top" alt="알라딘" data-toggle="modal" data-target="#알라딘">
+                <div class="card-body">
+                    <h4 class="card-title">알라딘</h4>
+                    <p class> <span class="over9"> 9.24</span></p>
+                    <p class="card-text">코미디</p>
+                    <p class="card-text">개봉일 : 2019.05.23.</p>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=163788" class="btn btn-primary">영화정보</a>
+                </div>
+            </div>
+
+
+            <div class="card col-12 col-sm-6 col-lg-4 col-xl-3" style="width: 18rem;">
+                <img src="images/20198323.jpg" class="card-img-top" alt="레드슈즈" data-toggle="modal" data-target="#레드슈즈">
+                <div class="card-body">
+                    <h5 class="card-title">레드슈즈</h5>
+                    <p class> <span class="over9"> 9.32</span></p>
+                    <p class="card-text">애니메이션</p>
+                    <p class="card-text">개봉일 : 2019.07.25.</p>
+                    <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=164907" class="btn btn-primary">영화정보</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- modal 1 -->
+    <div class="modal fade" id="엑시트" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">엑시트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class = "movie_photo" src="images/20184621-01.jpg" alt="">
+                    다음주 안에 이 영화를 볼 것입니다
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- modal 2 -->
+    <div class="modal fade" id="사자" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">엑시트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    이 영화는 그렇게 재미있지 않다고 합니다.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal 3 -->
+    <div class="modal fade" id="마이펫2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">엑시트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    다음주 안에 이 영화를 볼 것입니다
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- modal 4 -->
+    <div class="modal fade" id="라이온킹" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">엑시트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    다음주 안에 이 영화를 볼 것입니다
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- modal 5 -->
+    <div class="modal fade" id="알라딘" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">엑시트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    다음주 안에 이 영화를 볼 것입니다
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- modal 6 -->
+    <div class="modal fade" id="레드슈즈" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">엑시트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    다음주 안에 이 영화를 볼 것입니다
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        Marsa
+        <a class="btn btn-primary float-right" href="#" role="button">Going up</a>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- 마지막 세줄 아래 혹은 중간에 뭐 작성하면 안된다. -->
+
+</body>
+
+</html>
