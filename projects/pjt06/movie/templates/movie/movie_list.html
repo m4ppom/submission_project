@@ -1,0 +1,20 @@
+{% extends 'movie/base.html' %}
+{% load static %}
+{% block title %} movie listt {% endblock %}
+{% block body %}
+
+<img src="{% static 'movie/images/2.jpg' %}" alt="??">
+    <h1>UNCLE MOVIE WANT "YOU"</h1>
+<div><a href="{% url 'movie:new_movie' %}">
+    <button>새 영화 등록</button></a></div>
+{% if movies %}
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <a href="{{ movie.get_absolute_url }}">
+                {{ movie.title }}</a> {{ movie.score }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock body %}

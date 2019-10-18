@@ -1,0 +1,26 @@
+<form action="{% url 'movie:new_comment' movie.id %}" method="POST">
+    {% csrf_token %}
+    <div>
+    <p>한줄평: </p>
+        <textarea name="comment" id="comment" cols="30" rows="2"></textarea>
+    <p>평점: </p>
+        <textarea name="comment_score" id="comment_score" cols="2" rows="2"></textarea>
+    </div>
+    {% comment %} {{ comment_form.as_p }} {% endcomment %}
+    <input type="submit" value='한줄평'>
+</form>
+
+{% if comments %}
+    <ul>
+        {% for comment in comments %}
+            <li>
+                {{ comment.content }}
+                <form method="POST" action="{% url 'movie:delete_comment' movie.id comment.id %}">
+                    {% csrf_token %}
+                    <input type="submit" value="삭제">
+                </form>
+                <button>수정</button>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
