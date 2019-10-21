@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+
+{% block body %}
+<h1>login</h1>
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submint">
+</form>
+
+{% endblock body %}
