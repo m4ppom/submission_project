@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<h2>{{ user.username }}가 작성한 평점 정보</h2>
+{% if reviews %}
+<ul>
+
+{% for review in reviews %}
+<li>
+    {{review.movie.title }}: {{ review.score }}
+    {% comment %} <form action="{% url  }">
+    </form> {% endcomment %}
+</li>
+{% endfor %}
+
+</ul>
+{% endif %}
+
+<h2>{{ user.username }}가 좋아하는 영화 정보</h2>
+{% if like_movies %}
+<ul>
+<li>
+{% for movie in like_movies %}
+    {{movie.title}}
+{% endfor %}
+</li>
+</ul>
+{% endif %}
+
+{% comment %} 
+<h2>{{user_info.username}}</h2> {% endcomment %}
+{% comment %} {% if user != user_info %}
+{% if user_info in user.score.all %} {% endcomment %}
+{% endblock %}

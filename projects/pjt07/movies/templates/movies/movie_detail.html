@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}Movie Detail{% endblock title %}
+
+{% block body %}
+<div class="card mb-3" style="max-width: 1000px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ movie.poster_url }}" alt="{{ movie.title }}" width="300">
+      </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">Audience: {{ movie.audience }}</p>
+        <p class="card-text">Genre: {{ movie.genre.name }}</p>
+        <p class="card-text">Description:  {{ movie.description }}</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>Leave Movie Review</h3>
+  <div>
+    <form action="{% url 'movies:create_review' movie.id %}" method="POST">
+    {% csrf_token %}
+    {{ review_form.as_table}}
+    <input type="submit">
+    </form>
+  </div>
+  <div class="card" style="max-width: 1000px;">
+    {% if reviews %}
+        <ul class="list-group list-group-flush">
+    {% for review in reviews %}
+        <div class="row">
+          <div class="col-10">
+             <p class="card-text">{{ review.content }} | {{review.score}}점 </p>
+          </div>
+          <div class="col-2">
+    {% if user == review.user %}
+     <form action="{% url 'movies:delete_review' movie.id review.id %}" method="POST">
+      {% csrf_token %}
+      <button>
+        <i class="fas fa-trash"></i>
+      </button>
+    </form>
+  {% endif %}
+  </div>
+</div>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+</div>
+
+<hr>
+<form action="{% url 'movies:like' movie.id %}" method="POST">
+    {% csrf_token %}
+    
+    <button>
+        {% if is_like %}
+            Dislike
+        {% else %}
+            Like
+        {% endif %}
+    </button>
+</form>
+
+<div>
+<a href="{% url 'movies:movie_list' %}">목록</a>
+</div>
+
+{% endblock body %}
