@@ -7,10 +7,31 @@
     2-2. 드롭다운은 selectedGenreId data와 양방향바인딩(v-model)이 됩니다.
     2-3. 값 변경이 되면, 특정한 함수를 실행 해야합니다.
      -->
-    <select class="form-control">
-      <option>
-      </option>
-    </select>
+
+        
+    <select class="form-control" v-model="selectedGenreId">
+     <option value="all">All</option>
+     <option v-for="genre in genres" :key="genre.id" :value="genre.id">
+       {{genre.name}}
+     </option>
+   </select>
+    
+    <div class="row" >
+      <!-- <v-if="{{genre.name}} === 'movie.genre'" > -->
+        <MovieListItem
+         v-for="movie in movies"
+         :key ="movie.id"
+         :movie ="movie"
+         v-show ="selectedGenreId === movie.genre_id || !selectedGenreId  "
+       />
+       <MovieListItem
+         v-for="movie in movies"
+         :key ="movie.id"
+         :movie ="movie"
+         v-show ="selectedGenreId === 'all'  "
+       />
+    </div>
+      
       <!-- 1-3. 반복을 통해 호출하시오. 
         필요한 경우 props를 데이터를 보내줍니다.
       -->
@@ -22,20 +43,27 @@
 
 <script>
 // 1-1. 저장되어 있는 MovieListItem 컴포넌트를 불러오고,
-
+import MovieListItem from './MovieListItem'
 export default {
   name: 'MovieList',
   // 1-2. 아래에 등록 후
+  components: {
+    MovieListItem,
+  },
   data () {
     return {
+      selectedGenreId:0
       // 활용할 데이터를 정의하시오.
     }
   },
   // 0. props 데이터를 받이 위하여 설정하시오.
-  // genres와 movies 모두 타입은 Object이며, 필수입니다.
+  // genres와 movies 모두 타입은 Array이며, 필수입니다.
   // 설정이 완료 되었다면, 상위 컴포넌트에서 값을 넘겨 주세요.
   // 그리고 적절한 곳에 사용하세요.
-
+  props: {
+    movies: Array,
+    genres: Array,
+  }
   // 2-3.에서 이야기하는 특정한 함수는 selectedGenreId의 값이 변경될 때마다 호출 됩니다.
   // 드랍다운에서 장르를 선택하면, 해당 영화들만 보여주도록 구현 예정입니다.
   // 주의할 것은 직접 부모 컴포넌트의 데이터를 변경할 수 없다는 점입니다.
